@@ -1,0 +1,20 @@
+#cloud-config
+
+users:
+  - name: seregin
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5YomKL8licFR1heO5WoZl9K8lztjhLWOrXTJW9/nHVJv2hEcSHrmKxqjhwNv/JA1MKfiK/vwLPsFD5608945IUl+psM4Bnak7esZrvPg/rinz2jvxCwP6f/n6n4pMQemikCuVXvCXlJjDVkjT4DDVSuZ7BiStHT+DH1xFzxP+0aZ+lUjHB21UhtiGLlJHav4F2K3uAl7S9n7ufaAUFZEpx3zRlHlryQuxldHkMq3Hgu4JkxzmYGoUvAL0/emfsZn7PUWVUlpHqo98ii4e6SVIMy63vpcudjAIq4ht+veQbJbOTQ7127Obc+6jfBgpXDZCcM6PUAILyEmtTHfdSI9D
+    packages:
+      - nginx
+write_files:
+  - path: /var/www/html/index.html
+    content: |
+      <html>
+      <head><title>Welcome to LAMP</title></head>
+      <body>
+         <h1>Welcome to LAMP</h1>
+         <img src="https://storage.yandexcloud.net/netology-15-2/og_og_1547645777253662987.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJEoe7px_CNFXtz1U9HpaZQ%2F20250420%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20250420T192218Z&X-Amz-Expires=1036800&X-Amz-Signature=0a05ecf1287545385657d2d3be9d09090fa90c7a32c2dc72e13695ae6527e1a3&X-Amz-SignedHeaders=host" />
+      </body>
+      </html>
